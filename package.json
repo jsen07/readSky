@@ -9,5 +9,15 @@
     "mysql2": "^3.3.0",
     "nodemon": "^2.0.22",
     "sequelize": "^6.31.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js",
+    "nodemon": "nodemon"
+  },
+  "name": "readsky",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC"
 }
