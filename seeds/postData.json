@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "text": "This is a post.",
+      "likes": 10,
+      "private": false,
+      "user_id": 1
+    },
+    {
+      "id": 2,
+      "text": "Another post here!",
+      "likes": 5,
+      "private": true,
+      "user_id": 2
+    },
+    {
+      "id": 3,
+      "text": "Hello world!",
+      "likes": 2,
+      "private": false,
+      "user_id": 3
+    }
+  ]
+  
