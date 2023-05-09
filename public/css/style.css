@@ -28,7 +28,6 @@
 .login-btn {
     width:80px;
     height: 40px;
-    outline: blue 2px solid;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,9 +77,10 @@ img {
 }
 .login-wrapper {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 80px;
+    width: 150px;
     height: 40px;
     /* outline: pink 2px solid; */
     margin-right: 50px;
@@ -89,7 +89,6 @@ img {
 .login-btn {
     width:80px;
     height: 40px;
-    outline: blue 2px solid;
     display: flex;
     align-items: center;
     justify-content: center;
