@@ -110,6 +110,7 @@ img {
     height: 100px;
     outline: 2px solid black;
 }
+
 .link-wrapper {
     display: flex;
     height: 400px;
@@ -142,6 +143,7 @@ img {
     border-radius: 15px;
     
 }
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -159,6 +161,11 @@ input {
 button {
     height: 40px;
 }
+
 .form-container > * {
     margin: 5px;
+}
+
+#container {
+    
 }
