@@ -1,0 +1,23 @@
+[  
+    {    
+        "id": 1,    
+        "text": "This is a great post!",    
+        "likes": 10,    
+        "user_id": 1,    
+        "post_id": 1  
+    },  
+    {    
+        "id": 2,    
+        "text": "I totally agree with you!",    
+        "likes": 5,    
+        "user_id": 2,    
+        "post_id": 1  
+    },  
+    {    
+        "id": 3,    
+        "text": "Thanks for sharing this.",    
+        "likes": 2,    
+        "user_id": 3,    
+        "post_id": 2  
+    }
+]
