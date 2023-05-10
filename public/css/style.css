@@ -134,7 +134,7 @@ img {
 
 .register-form {
     width: 600px;
-    height: 550px;
+    height: 650px;
     border: 2px solid black;
     display: flex;
     align-items: center;
@@ -148,7 +148,7 @@ img {
     display: flex;
     flex-direction: column;
     width: 500px;
-    height: 500px;
+    height: 600px;
     font-size: 24px;
 
 }
@@ -166,6 +166,6 @@ button {
     margin: 5px;
 }
 
-#container {
+/* #container {
     
-}
+} */
