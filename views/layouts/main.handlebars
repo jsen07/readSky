@@ -15,9 +15,15 @@
     <div class="login-wrapper">
     <a href="/login" class="login-btn"> Login / </a> 
     <a href="/register" class="login-btn"> Register </a>
+    {{#if loggedIn}}
+    <button id="logout" class="logout-btn">Logout</button>
+     {{/if}}
 </div>
 </nav>
 <body>
     {{{body}}}
+    {{!-- {{#if loggedIn}}
+  <script src="/scripts/logout.js"></script>
+  {{/if}} --}}
 </body>
 </html>
