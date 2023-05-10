@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// ROUTING FOR localhost/api/users/
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create({
@@ -11,10 +12,6 @@ router.post('/', async (req, res) => {
             password: req.body.password,
         });
 
-        req.session.save(() => {
-            req.session.loggedIn = true;
-            res.status(200).json(userData);
-        });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -39,7 +36,7 @@ router.post('/login', async (req, res) => {
             return;
         }
         req.session.save(() => {
-            req.session.loggedIn = true;
+            req.session.logged_in = true;
       
             res
               .status(200)
@@ -52,14 +49,24 @@ router.post('/login', async (req, res) => {
 
     });
 
-router.get('/login', async (req, res) => {
-    try {
-        const userData = await User.findAll();
-        const users = userData.map((user) => user.get({ plain: true }))
-        res.status(200).json(users);
-    } catch (error) {
-        res.status(500).json(error);
+router.post('/logout', (req, res) => {
+    if(req.session.logged_in){
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
     }
+        else {
+            res.status(404).end();
+        }
 });
+// router.get('/login', async (req, res) => {
+//     try {
+//         const userData = await User.findAll();
+//         const users = userData.map((user) => user.get({ plain: true }))
+//         res.status(200).json(users);
+//     } catch (error) {
+//         res.status(500).json(error);
+//     }
+// });
 
 module.exports = router;
