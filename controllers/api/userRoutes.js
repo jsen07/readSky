@@ -11,6 +11,7 @@ router.post('/', async (req, res) => {
             email: req.body.email,
             password: req.body.password,
         });
+        res.redirect('/login');
 
     } catch (err) {
         console.log(err);
