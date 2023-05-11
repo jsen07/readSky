@@ -166,6 +166,82 @@ button {
     margin: 5px;
 }
 
-/* #container {
-    
-} */
+#title {
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+
+#left-page {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 750px;
+    margin: 1.5%;
+    border: 2px solid red;
+    align-items: center;
+    border-radius: 15px;
+}
+.home-button-home {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.home-button {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.button {
+    width: 60%;
+    margin: 3%;
+}
+
+#middle-page {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    height: 750px;
+    margin: 1.5%;
+    border: 2px solid red;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+#right-page {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 750px;
+    margin: 1.5%;
+    border: 2px solid red;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.search-box {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.search-button {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 3%;
+}
