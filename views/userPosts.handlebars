@@ -1,0 +1,29 @@
+    <section>
+    <div class="profile-header">
+        <div class="name">{{userPosts.first_name}} {{userPosts.last_name}}</div>
+        <div class="username">{{userPosts.username}}</div>
+        <div class="">{{userPosts.email}}</div>
+    </div>
+    <div class="profile-posts">
+        {{#each userPosts.posts as |post|}}
+        <div class="post">
+            <div class="post-header">
+                <div class="profile-img"></div>
+                <div class="username">{{userPosts.username}}</div>
+            </div>
+            <div class="text">{{post.text}}</div>
+            <div class="post-likes">Likes: {{post.likes}}</div>
+            <div class="post-footer">
+                <div class="comments">
+                    <ul>
+                        {{#each post.comments as |comment|}}
+                        <li>{{comment.text}} - Likes: {{comment.likes}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="likes"></div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>

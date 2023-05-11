@@ -1,7 +1,33 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
 // ROUTING FOR localhost/api/users/
+router.get('/:id', async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Post,
+                    attributes: ['text', 'likes', 'private'],
+                    include: [
+                        {
+                            model: Comment,
+                            attributes: ['text', 'likes']
+                        }
+                    ]
+                },
+                
+            ]
+        });
+        const userPosts = userData.get({ plain: true });
+        res.render('userPosts', { userPosts });
+        console.log(userPosts);
+    } catch (error) {
+        res.status(500).json(error);
+        console.log(error);
+    }
+});
+
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create({
