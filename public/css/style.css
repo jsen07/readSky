@@ -166,6 +166,58 @@ button {
     margin: 5px;
 }
 
+#title {
+    text-align: center;
+}
+
 #container {
-    
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+
+#left-page {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 750px;
+    margin: 1.5%;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+#home-button {
+    width: 20px;
+}
+
+#middle-page {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 750px;
+    margin: 1.5%;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+#right-page {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 750px;
+    margin: 1.5%;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
 }
