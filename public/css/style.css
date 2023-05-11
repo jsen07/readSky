@@ -181,17 +181,30 @@ button {
 #left-page {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 20%;
     height: 750px;
     margin: 1.5%;
-    border: 2px solid black;
+    border: 2px solid red;
     align-items: center;
-    justify-content: center;
     border-radius: 15px;
 }
+.home-button-home {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
 
-#home-button {
-    width: 20px;
+.home-button {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.button {
+    width: 60%;
+    margin: 3%;
 }
 
 #middle-page {
@@ -199,10 +212,10 @@ button {
     flex-direction: row;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 47%;
     height: 750px;
     margin: 1.5%;
-    border: 2px solid black;
+    border: 2px solid red;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
@@ -210,14 +223,25 @@ button {
 
 #right-page {
     display: flex;
-    flex-direction: row;
-    display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 20%;
     height: 750px;
     margin: 1.5%;
-    border: 2px solid black;
+    border: 2px solid red;
     align-items: center;
-    justify-content: center;
     border-radius: 15px;
+}
+
+.search-box {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.search-button {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 3%;
 }
