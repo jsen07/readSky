@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get("/", function (req, res) {
-    res.render('homepage');
+    res.render('homepage', { logged_in: req.session.logged_in });
 
 })
 
@@ -20,4 +20,6 @@ router.get("/register", (req, res) => {
     }
     res.render('register');
 })
+
+
 module.exports = router;
