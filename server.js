@@ -20,7 +20,7 @@ const sess = {
         sameSite: "strict",
     },
     resave: false,
-    saveUninitalized: true,
+    saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize,
     }),

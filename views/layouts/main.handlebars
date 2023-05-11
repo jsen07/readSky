@@ -13,11 +13,18 @@
 </head>
 <nav class="top-nav">
     <div class="login-wrapper">
+    {{#if logged_in}}
+    <button id="logout" class="logout-btn">Logout</button>
+    {{else}}
     <a href="/login" class="login-btn"> Login / </a> 
     <a href="/register" class="login-btn"> Register </a>
+     {{/if}}
 </div>
 </nav>
 <body>
     {{{body}}}
+    {{#if logged_in}}
+  <script src="/scripts/logout.js"></script>
+  {{/if}}
 </body>
 </html>
