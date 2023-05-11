@@ -5,14 +5,15 @@ router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll({
             include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                },
                 {   
                     model: Comment,
                     attributes: ['text', 'likes'],
                 },
-                {
-                    model: User,
-                    attributes: ['username']
-                }
+                
             ]
         });
         const posts = postData.map((post) => post.get({ plain: true }));
@@ -49,7 +50,7 @@ router.post('/', async (req, res) => {
             private: req.body.private,
             user_id: req.body.user_id
         });
-        res.status(200).json(newPost);
+        res.render('createPost');
     } catch (error) {
         res.status(500).json(error);
         console.log(error);
