@@ -5,17 +5,23 @@ router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll({
             include: [
-                {   model: Comment,
-                    attributes: ['text', 'likes']
+                {   
+                    model: Comment,
+                    attributes: ['text', 'likes'],
+                },
+                {
+                    model: User,
+                    attributes: ['username']
                 }
             ]
         });
-        const posts = postData.map((post) => post.get({ plain: true }))
-        res.status(200).json(posts);
+        const posts = postData.map((post) => post.get({ plain: true }));
+        res.render('posts', { posts });  // Pass 'posts' to the view
     } catch (error) {
         res.status(500).json(error);
     }
 });
+
 
 router.get('/:id', async (req, res) => {
     try {
