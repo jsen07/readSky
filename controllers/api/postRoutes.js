@@ -12,6 +12,10 @@ router.get('/', async (req, res) => {
                 {   
                     model: Comment,
                     attributes: ['text', 'likes'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
                 },
                 
             ]
@@ -23,6 +27,33 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/trending', async (req, res) => {
+    try {
+        const postData = await Post.findAll({
+            order: [['likes', 'DESC']],
+            limit: 5,
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+                {
+                    model: Comment,
+                    attributes: ['text', 'likes'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                }
+            ]
+        });
+        const trendingPosts = postData.map((post) => post.get({ plain: true }));
+        console.log(trendingPosts.comments);
+        res.render('trending', { trendingPosts });
+    } catch (error) {
+        console.log(error);
+    }
+});
 
 router.get('/:id', async (req, res) => {
     try {
