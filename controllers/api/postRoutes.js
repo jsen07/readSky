@@ -20,6 +20,7 @@ router.get('/', async (req, res) => {
                 
             ]
         });
+        console.log(req.session.user);
         const posts = postData.map((post) => post.get({ plain: true }));
         res.render('posts', { posts });  // Pass 'posts' to the view
     } catch (error) {
@@ -48,10 +49,17 @@ router.get('/trending', async (req, res) => {
             ]
         });
         const trendingPosts = postData.map((post) => post.get({ plain: true }));
-        console.log(trendingPosts.comments);
         res.render('trending', { trendingPosts });
     } catch (error) {
         console.log(error);
+    }
+});
+
+router.get('/create', (req, res) => {
+    try {
+        res.render('createPost');
+    } catch (error) {
+        console.log(error)
     }
 });
 
@@ -74,14 +82,15 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    const privateValue = req.body.private ? 1 : 0;
     try {
         const newPost = await Post.create({
             text: req.body.text,
             likes: 0,
-            private: req.body.private,
+            private: privateValue,
             user_id: req.body.user_id
         });
-        res.render('createPost');
+        res.redirect('/');
     } catch (error) {
         res.status(500).json(error);
         console.log(error);

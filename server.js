@@ -20,7 +20,7 @@ const hbs = expHandlebars.create({
 
 const sess = {
     secret: "Super secret secret",
-    cooke: {
+    cookie: {
         httpOnly: true,
         secure: false,
         sameSite: "strict",
