@@ -1,21 +1,20 @@
 <!-- search-results.handlebars -->
 
 <h1>Search Results</h1>
-
 {{#if searchResults.length}}
   <ul>
-    {{#each searchResults}}
+    {{#each searchResults as |result|}}
       <li>
-        <h2>{{text}}</h2>
-        <p>Likes: {{likes}}</p>
-        <p>Posted by: {{User.username}}</p>
+        <h2>{{result.text}}</h2>
+        <p>Likes: {{result.likes}}</p>
+        <p>Posted by: {{result.user.username}}</p>
         <h3>Comments</h3>
         <ul>
-          {{#each Comments}}
+          {{#each result.comments as |comment|}}
             <li>
-              <p>{{text}}</p>
-              <p>Likes: {{likes}}</p>
-              <p>Commented by: {{User.username}}</p>
+              <p>{{comment.text}}</p>
+              <p>Likes: {{comment.likes}}</p>
+              <p>Commented by: {{comment.user.username}}</p>
             </li>
           {{/each}}
         </ul>
@@ -25,3 +24,4 @@
 {{else}}
   <p>No results found.</p>
 {{/if}}
+

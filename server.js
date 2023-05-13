@@ -10,7 +10,13 @@ const sequelize = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = expHandlebars.create({});
+const hbs = expHandlebars.create({
+    // Set the runtime options
+    runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true,
+  },
+});
 
 const sess = {
     secret: "Super secret secret",
