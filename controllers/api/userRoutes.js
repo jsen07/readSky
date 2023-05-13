@@ -21,7 +21,6 @@ router.get('/:id', async (req, res) => {
         });
         const userPosts = userData.get({ plain: true });
         res.render('userPosts', { userPosts });
-        console.log(userPosts);
     } catch (error) {
         res.status(500).json(error);
         console.log(error);
@@ -63,6 +62,7 @@ router.post('/login', async (req, res) => {
             return;
         }
         req.session.save(() => {
+            req.session.user_id = userData.id;
             req.session.logged_in = true;
       
             res.status(200).json({ user: userData, message: 'You are now logged in!' });

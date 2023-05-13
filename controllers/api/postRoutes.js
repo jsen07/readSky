@@ -20,7 +20,6 @@ router.get('/', async (req, res) => {
                 
             ]
         });
-        console.log(req.session.user);
         const posts = postData.map((post) => post.get({ plain: true }));
         res.render('posts', { posts });  // Pass 'posts' to the view
     } catch (error) {
@@ -88,7 +87,7 @@ router.post('/', async (req, res) => {
             text: req.body.text,
             likes: 0,
             private: privateValue,
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         });
         res.redirect('/');
     } catch (error) {
