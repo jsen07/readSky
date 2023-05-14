@@ -10,7 +10,7 @@ router.get("/login", (req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('login', { message: req.flash('message') });
+    res.render('login');
 })
 
 router.get("/register", (req, res) => {
