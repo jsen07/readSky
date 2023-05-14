@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 router.get("/", function (req, res) {
+    req.flash('message', req.session.username);
     res.render('homepage', { logged_in: req.session.logged_in, message: req.flash('message') });
 
 })
