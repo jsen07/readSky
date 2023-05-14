@@ -6,7 +6,6 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const flash = require('connect-flash');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-const flash = require('connect-flash')
 const app = express();
 const PORT = process.env.PORT || 3001;
 
