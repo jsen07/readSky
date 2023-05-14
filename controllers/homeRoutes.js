@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get("/", function (req, res) {
-    res.render('homepage', { logged_in: req.session.logged_in });
+    res.render('homepage', { logged_in: req.session.logged_in, message: req.flash('message') });
 
 })
 
@@ -10,7 +10,7 @@ router.get("/login", (req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('login');
+    res.render('login', { message: req.flash('message') });
 })
 
 router.get("/register", (req, res) => {

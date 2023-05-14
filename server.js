@@ -3,7 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const expHandlebars = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+const flash = require('connect-flash');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 
@@ -31,12 +31,15 @@ const sess = {
         db: sequelize,
     }),
 };
-
+app.use(flash());
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
+app.use(function(req, res, next) {
+    res.locals.messages = req.flash();
+    next();
+});
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));

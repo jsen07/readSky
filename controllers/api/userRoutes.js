@@ -60,6 +60,7 @@ router.post('/login', async (req, res) => {
         if(!validPassword) {
             res.status(400).json({ message: 'Incorrect email or password.'});
             return;
+    
         }
         req.session.save(() => {
             req.session.user_id = userData.id;
@@ -67,6 +68,7 @@ router.post('/login', async (req, res) => {
       
             res.status(200).json({ user: userData, message: 'You are now logged in!' });
           });
+          req.flash('message', userData.username);
         } catch (err) {
           console.log(err);
           res.status(500).json(err);

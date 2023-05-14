@@ -3,6 +3,7 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#psw').value.trim();
+    const error = document.querySelector('#login-error');
 
     if (email && password) {
         const response = await fetch('/api/users/login', {
@@ -12,10 +13,9 @@ const loginFormHandler = async (event) => {
         });
     
         if (response.ok) {
-            alert('u have signed in');
           document.location.replace('/');
         } else {
-          alert('Failed to log in.');
+          error.textContent = 'Failed to log in: E-mail or password is incorrect.';
         }
       }
 }
