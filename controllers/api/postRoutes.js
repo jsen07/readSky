@@ -12,6 +12,10 @@ router.get('/', async (req, res) => {
                 {   
                     model: Comment,
                     attributes: ['text', 'likes'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
                 },
                 
             ]
@@ -23,6 +27,40 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/trending', async (req, res) => {
+    try {
+        const postData = await Post.findAll({
+            order: [['likes', 'DESC']],
+            limit: 5,
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+                {
+                    model: Comment,
+                    attributes: ['text', 'likes'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                }
+            ]
+        });
+        const trendingPosts = postData.map((post) => post.get({ plain: true }));
+        res.render('trending', { trendingPosts });
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+router.get('/create', (req, res) => {
+    try {
+        res.render('createPost');
+    } catch (error) {
+        console.log(error)
+    }
+});
 
 router.get('/:id', async (req, res) => {
     try {
@@ -43,14 +81,15 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    const privateValue = req.body.private ? 1 : 0;
     try {
         const newPost = await Post.create({
             text: req.body.text,
             likes: 0,
-            private: req.body.private,
-            user_id: req.body.user_id
+            private: privateValue,
+            user_id: req.session.user_id
         });
-        res.render('createPost');
+        res.redirect('/');
     } catch (error) {
         res.status(500).json(error);
         console.log(error);

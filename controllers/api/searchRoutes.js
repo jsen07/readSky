@@ -3,7 +3,7 @@ const { Op } = require('sequelize');
 const { User, Post, Comment } = require('../../models');
 
 router.post('/', async (req, res) => {
-    const searchQuery = req.query.search;
+    const searchQuery = req.body.search;
     
     try {
       const searchResults = await Post.findAll({
@@ -23,15 +23,21 @@ router.post('/', async (req, res) => {
           },
         ],
         where: {
-          text: {
-            [Op.like]: `%${searchQuery}%`, 
-          }
+          [Op.or]: [
+            {
+              text: {
+                [Op.like]: `%${searchQuery}%`,
+              },
+            },
+            {
+              '$User.username$': {
+                [Op.like]: `%${searchQuery}%`,
+              },
+            },
+          ],
         },
       });
-  
-      res.render('searchResults', {searchResults});
-      console.log(`search query: ${searchQuery}`);
-      console.log(`search result: ${searchResults}`);
+      res.render('searchResults', { searchResults });
     } catch (error) {
       console.log(error);
       res.status(500).json({ error: 'An error occurred while performing the search' });

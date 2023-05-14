@@ -10,11 +10,17 @@ const flash = require('connect-flash')
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = expHandlebars.create({});
+const hbs = expHandlebars.create({
+    // Set the runtime options
+    runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true,
+  },
+});
 
 const sess = {
     secret: "Super secret secret",
-    cooke: {
+    cookie: {
         httpOnly: true,
         secure: false,
         sameSite: "strict",

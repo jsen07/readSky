@@ -1,0 +1,27 @@
+<!-- search-results.handlebars -->
+
+<h1>Search Results</h1>
+{{#if searchResults.length}}
+  <ul>
+    {{#each searchResults as |result|}}
+      <li>
+        <h2>{{result.text}}</h2>
+        <p>Likes: {{result.likes}}</p>
+        <p>Posted by: {{result.user.username}}</p>
+        <h3>Comments</h3>
+        <ul>
+          {{#each result.comments as |comment|}}
+            <li>
+              <p>{{comment.text}}</p>
+              <p>Likes: {{comment.likes}}</p>
+              <p>Commented by: {{comment.user.username}}</p>
+            </li>
+          {{/each}}
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No results found.</p>
+{{/if}}
+
