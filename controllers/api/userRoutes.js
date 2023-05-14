@@ -56,18 +56,16 @@ router.post('/login', async (req, res) => {
             res.status(400).json({ message: 'incorrect email or password.'});
             return;
         }
-        const users = userData.get({ plain: true })
-        console.log(users.password);
         const validPassword = await userData.checkPassword(req.body.password);
         if(!validPassword) {
             res.status(400).json({ message: 'Incorrect email or password.'});
             return;
+    
         }
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
-            req.session.username = users.username;
-      
+            req.session.username = userData.username;
             res.status(200).json({ user: userData, message: 'You are now logged in!' });
           });
         } catch (err) {
@@ -88,5 +86,4 @@ router.post('/logout', (req, res) => {
         }
 });
 //wqeqe
-
 module.exports = router;
