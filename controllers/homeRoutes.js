@@ -21,37 +21,29 @@ router.get("/register", (req, res) => {
     }
     res.render('register');
 })
-
 router.get("/profile", (req, res) => {
     if(req.session.logged_in) {
-        res.redirect(`profile/${req.session.user_id}`);
-        return;
+       res.redirect(`/profile/${req.session.user_id}`);
+       return;
+        
     }
-    res.render('profile');
+    res.redirect('/');
 })
-router.get('/profile/:id', async (req, res) => {
-    try {
-        const userData = await User.findByPk(req.params.id, {
-            include: [
-                {
-                    model: Post,
-                    attributes: ['text', 'likes', 'private'],
-                    include: [
-                        {
-                            model: Comment,
-                            attributes: ['text', 'likes']
-                        }
-                    ]
-                },
-                
-            ]
-        });
-        const userPosts = userData.get({ plain: true });
-        res.render('userPosts', { userPosts });
-    } catch (error) {
-        res.status(500).json(error);
-        console.log(error);
-    }
-});
 
+router.get("/profile/edit", (req, res) => {
+    if(req.session.logged_in) { 
+        res.redirect(`/profile/edit/${req.session.user_id}`);  
+    return
+    }
+    res.redirect('/');
+})
+
+router.get("/profile/edit/:id", (req, res) => {
+    if(req.session.logged_in) { 
+    res.render('edit-profile', { logged_in: req.session.logged_in});
+    return
+    }
+    res.redirect('/');
+
+});
 module.exports = router;
