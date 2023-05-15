@@ -1,85 +1,3 @@
-<style>
-#title {
-  font-family: Arial, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  color: #333333;
-  margin-bottom: 20px;
-}
-
-#container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border: 10px solid #ccc;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-.home-button {
-  margin-top: 20px;
-  padding: 10px;
-  width: 150px;
-  height: 40px;
-  border-radius: 10px;
-  border: 10px solid #ccc;
-  background-color: #f2f2f2;
-  font-size: 18px;
-  font-family: Arial;
-  font-weight: bold;
-  color: #333333;
-  text-align: center;
-  line-height: 40px;
-  margin-bottom: 20px;
-}
-
-.button {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #ccc;
-  background-color: #f2f2f2;
-  font-size: 18px;
-  font-family: Arial;
-  font-weight: bold;
-  color: #333333;
-  text-align: center;
-  line-height: 40px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.search-box {
-  width: 95%;
-  height: 40px;
-  padding: 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 10px solid #ccc;
-  box-sizing: border-box;
-  border-radius: 10px;
-}
-
-.search-button {
-  width: 95%;
-  height: 40px;
-  border: 1px solid #ccc;
-  background-color: #f2f2f2;
-  font-size: 18px;
-  font-family: Arial;
-  font-weight: bold;
-  color: #333333;
-  text-align: center;
-  line-height: 40px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-</style>
-
 <h1 id="title"> home page </h1>
 <div id="container">
 
@@ -101,8 +19,14 @@
     </div>
 
     <div id="right-page">
-    <input class="search-box" type="text" placeholder="search tweets" name="email" id="email" required>
-    <button class="search-button" type="search-button">Search</button>
+    {{!-- <input class="search-box" type="text" placeholder="search tweets" name="email" id="email" required> --}}
+    {{!-- <button class="search-button" type="search-button">Search</button> --}}
+    <form action="/api/search" method="post">
+      <input type="text" name="search" placeholder="Search...">
+      <button id="search-button" type="submit">Search</button>
+    </form>
+    {{ searchResults }}
     </div>
 </div>
+
 

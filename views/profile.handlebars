@@ -1,0 +1,32 @@
+<h1> Profile page </h1>
+
+    <section>
+    <div class="profile-header">
+        <div class="name">{{userPosts.first_name}} {{userPosts.last_name}}</div>
+        <div class="username"> Username : {{userPosts.username}}</div>
+        <div class=""> E-mail :{{userPosts.email}}</div>
+    </div>
+    <div class="profile-posts">
+        {{#each userPosts.posts as |post|}}
+        <div class="post">
+            <div class="post-header">
+                <div class="profile-img"></div>
+                <div class="username">{{userPosts.username}}</div>
+            </div>
+            <div class="text">{{post.text}}</div>
+            <div class="post-likes">Likes: {{post.likes}}</div>
+            <div class="post-footer">
+                <div class="comments">
+                    <ul>
+                        {{#each post.comments as |comment|}}
+                        <li>{{comment.text}} - Likes: {{comment.likes}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="likes"></div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <a href="/profile/edit"> Edit profile </a>
+</section>
