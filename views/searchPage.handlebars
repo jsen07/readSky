@@ -1,5 +1,5 @@
 
-<h1 id="title">home page</h1> 
+<h1 id="title">search page</h1> 
 {{#if logged_in}}
 {{#if message}}
 {{message}}</h1>
@@ -25,27 +25,36 @@
 
     <div id="middle-page">
         <section>
-        {{#each posts as |post|}}
-        {{> _posts}}
-        {{/each}}
+            <form action="/api/search" method="post">
+                <input type="text" name="search" placeholder="Search all posts...">
+                <button id="search-button" type="submit">Search</button>
+            </form>
+            {{#if postSearches.length}}
+            <ul>
+                {{#each postSearches as |result|}}
+                    {{> _postSearches}}
+                {{/each}}
+            </ul>
+            {{else}}
+            {{#each posts as |post|}}
+                {{> _posts}}
+            {{/each}}
+            {{/if}}
+        
         </section>
     </div>
 
     <div id="right-page">
-    {{!-- <input class="search-box" type="text" placeholder="search tweets" name="email" id="email" required> --}}
-    {{!-- <button class="search-button" type="search-button">Search</button> --}}
     <section>
     <form action="/api/search" method="post">
       <input type="text" name="search" placeholder="Search...">
       <button id="search-button" type="submit">Search</button>
     </form>
     
-    {{> _searchResults}}
-    
     </section>
     <section>
-        {{#each trendingPosts as |post|}}
-        {{> _trending}}
+        {{#each userSearches as |result|}}
+            {{> _userSearches}}
         {{/each}}
     </section>
     </div>
