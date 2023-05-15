@@ -7,10 +7,12 @@ const flash = require('connect-flash');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const app = express();
+const helpers = require('./utils/helpers');
 const PORT = process.env.PORT || 3001;
 
 const hbs = expHandlebars.create({
     // Set the runtime options
+    helpers,
     runtimeOptions: {
     allowProtoPropertiesByDefault: true,
     allowProtoMethodsByDefault: true,
