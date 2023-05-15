@@ -60,11 +60,12 @@ router.post('/login', async (req, res) => {
         if(!validPassword) {
             res.status(400).json({ message: 'Incorrect email or password.'});
             return;
+    
         }
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
-      
+            req.session.username = userData.username;
             res.status(200).json({ user: userData, message: 'You are now logged in!' });
           });
         } catch (err) {
@@ -84,14 +85,7 @@ router.post('/logout', (req, res) => {
             res.status(404).end();
         }
 });
-// router.get('/login', async (req, res) => {
-//     try {
-//         const userData = await User.findAll();
-//         const users = userData.map((user) => user.get({ plain: true }))
-//         res.status(200).json(users);
-//     } catch (error) {
-//         res.status(500).json(error);
-//     }
-// });
 //wqeqe
+
+
 module.exports = router;
