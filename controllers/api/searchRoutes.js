@@ -122,7 +122,7 @@ router.post('/', async (req, res) => {
     });
 
     const userSearches = await User.findAll({
-      attributes: ['username'],
+      attributes: ['username', 'id'],
       where: {
         username: {
           [Op.like]: `%${searchQuery}%`,
