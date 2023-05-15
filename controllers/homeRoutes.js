@@ -41,8 +41,10 @@ router.get("/profile/edit", (req, res) => {
 
 router.get("/profile/edit/:id", (req, res) => {
     if(req.session.logged_in) { 
+        if(req.session.user_id == req.params.id) {
     res.render('edit-profile', { logged_in: req.session.logged_in});
     return
+        }
     }
     res.redirect('/');
 
