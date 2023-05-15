@@ -1,13 +1,12 @@
 <!-- search-results.handlebars -->
 
-<h1>Search Results</h1>
-{{#if searchResults.length}}
+{{!-- {{#if searchResults.length}}
   <ul>
-    {{#each searchResults as |result|}}
+    {{#each searchResults as |result|}} --}}
       <li>
-        <h2>{{result.text}}</h2>
-        <p>Likes: {{result.likes}}</p>
-        <p>Posted by: {{result.user.username}}</p>
+        <h2>{{text}}</h2>
+        <p>Likes: {{likes}}</p>
+        <p>Posted by: {{user.username}}</p>
         <h3>Comments</h3>
         <ul>
           {{#each result.comments as |comment|}}
@@ -19,9 +18,10 @@
           {{/each}}
         </ul>
       </li>
-    {{/each}}
+    {{!-- {{/each}}
   </ul>
 {{else}}
   <p>No results found.</p>
-{{/if}}
+{{/if}} --}}
+
 

@@ -1,4 +1,18 @@
-const path = require('path'); // The const path = require('path') statement imports the built-in Node.js module path.
+
+// const path = require('path'); // The const path = require('path') statement imports the built-in Node.js module path.
+// =======
+// const path = require('path');
+// const express = require('express');
+// const session = require('express-session');
+// const expHandlebars = require('express-handlebars');
+// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// const flash = require('connect-flash');
+// const routes = require('./controllers');
+// const sequelize = require('./config/connection');
+// const app = express();
+// const helpers = require('./utils/helpers');
+// const PORT = process.env.PORT || 3001;
+
 
 const express = require('express'); // The const express = require('express') statement imports the express module, which is a popular web framework for Node.js.
 
@@ -21,6 +35,7 @@ const PORT = process.env.PORT || 3001; // The const PORT = process.env.PORT || 3
 //The const hbs = expHandlebars.create({ ... }) statement creates an instance of the express-handlebars view engine with custom configurations.
 const hbs = expHandlebars.create({
     // Set the runtime options
+    helpers,
     runtimeOptions: {
     allowProtoPropertiesByDefault: true,
     allowProtoMethodsByDefault: true,
