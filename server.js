@@ -1,5 +1,9 @@
-const path = require('path');
+
+
+const path = require('path'); // The const path = require('path') statement imports the built-in Node.js module path.
 const helpers = require('./utils/helpers');
+
+
 const express = require('express'); // The const express = require('express') statement imports the express module, which is a popular web framework for Node.js.
 const session = require('express-session'); // The const session = require('express-session') statement imports the express-session module, which is an Express middleware for managing sessions in web applications.
 const expHandlebars = require('express-handlebars'); // The const expHandlebars = require('express-handlebars') statement imports the express-handlebars module, which is an Express view engine for rendering dynamic templates.
