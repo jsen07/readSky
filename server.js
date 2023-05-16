@@ -1,7 +1,7 @@
 
 // const path = require('path'); // The const path = require('path') statement imports the built-in Node.js module path.
 // =======
-// const path = require('path');
+const path = require('path');
 // const express = require('express');
 // const session = require('express-session');
 // const expHandlebars = require('express-handlebars');
@@ -10,7 +10,7 @@
 // const routes = require('./controllers');
 // const sequelize = require('./config/connection');
 // const app = express();
-// const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 // const PORT = process.env.PORT || 3001;
 
 
