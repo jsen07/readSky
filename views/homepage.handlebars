@@ -16,7 +16,7 @@
             <button class="button"type="profile-button">Explore</button>
         </div>
         <div class="home-button">
-            <button class="button"type="post-button">Post</button>
+            <button id="popup-button" class="button"type="post-button">Post</button>
         </div>
         <div class="home-button">
             <button class="button"type="profile-button">Profile</button>
@@ -25,6 +25,10 @@
 
     <div id="middle-page">
         <section>
+        {{#if showCreatePost}}
+
+            {{> _createPost}}
+        {{/if}}
         {{#each posts as |post|}}
         {{> _posts}}
         {{/each}}
