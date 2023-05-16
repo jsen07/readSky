@@ -7,19 +7,22 @@
             <div class="profile-img"></div>
             <div class="username" style="color: red">{{user.username}}</div>
         </div>
+        <div class="post-body">
         <div class="text" style="color: black">{{text}}</div>
+        </div>
         <div class="post-likes" style="color: black">Likes: {{likes}}</div>
         <div class="post-footer">
-            <div class="comments">
-                <ul>
+                <ul> <p class='comment'>Comments</p>
+                    <div class="comment-block">
                     {{#each comments as |comment|}}
                     <li style="color: purple">{{comment.user.username}}</li>
                     <li style="color: blue">{{text}} - Likes: {{likes}}</li>
                     {{/each}}
+                    </div>
                 </ul>
-            </div>
             <div class="likes"></div>
         </div>
     </div>
+    <script src="scripts/comments.js"></script>
     {{!-- {{/each}}
 </section> --}}
