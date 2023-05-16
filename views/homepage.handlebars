@@ -24,7 +24,7 @@
     </div>
 
     <div id="middle-page">
-        <section>
+      
         {{#if showCreatePost}}
 
             {{> _createPost}}
@@ -32,13 +32,13 @@
         {{#each posts as |post|}}
         {{> _posts}}
         {{/each}}
-        </section>
+       
     </div>
 
     <div id="right-page">
     {{!-- <input class="search-box" type="text" placeholder="search tweets" name="email" id="email" required> --}}
     {{!-- <button class="search-button" type="search-button">Search</button> --}}
-    <section>
+    <section class="search-form">
     <form action="/api/search" method="post">
       <input type="text" name="search" placeholder="Search...">
       <button id="search-button" type="submit">Search</button>
@@ -47,7 +47,7 @@
 
     
     </section>
-    <section>
+    <section class="home-posts">
         {{#each trendingPosts as |post|}}
         {{> _trending}}
         {{/each}}
