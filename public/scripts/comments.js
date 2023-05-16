@@ -3,7 +3,7 @@ function addID() {
 
     const comments = document.getElementsByClassName('comment');
     const commentBlock = document.getElementsByClassName('comment-block');
-    for (let i = 0; i <= comments.length; i++) {
+    for (let i = 0; i < comments.length; i++) {
         comments[i].setAttribute('id', i);
         commentBlock[i].setAttribute('id', 'block'+i);
         // commentBlock[i].style.display = 'none';
@@ -23,7 +23,6 @@ function displayComments (e)  {
     // if(block.style.display==="block") {
     //     block.style.display = 'none';
     // }
-console.log(id);
 }
 
 addID();

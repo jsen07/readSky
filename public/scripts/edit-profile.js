@@ -8,7 +8,7 @@ const editFirstName = async (event) => {
     }
 
     if(first_name) {
-        const response = await fetch ('/api/profile/edit', {
+        const response = await fetch ('/api/users/edit', {
             method: 'POST',
             body: JSON.stringify({ first_name }),
             headers: { 'Content-Type': 'application/json' },

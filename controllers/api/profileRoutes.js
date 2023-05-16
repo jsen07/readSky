@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit', async (req, res) => {
     try {
         const userUpdate = await User.update(
             {
