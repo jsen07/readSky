@@ -15,22 +15,16 @@
         </div>
         {{#if logged_in}}
         <div class="home-button">
-            <button class="button-home">Post</button>
-        </div>
-        {{#if logged_in}}
-        <div class="home-button">
-            <button id="popup-button" class="button"type="post-button">Post</button>
-            <button class="button-home">Post</button>
+            <button id="popup-button" class="button-home">Post</button>
         </div>
         <div class="home-button">
-            <button class="button"type="profile-button">Profile</button>
            <button class="button-home"><a href="/profile">Profile</a></button>
         </div>
           {{/if}}
     </div>
 
     <div id="middle-page">
-        {{ createPost}}
+      
         {{#each posts as |post|}}
         {{> _posts}}
     {{!-- {{#if logged_in}} --}}
