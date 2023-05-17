@@ -57,6 +57,7 @@ img {
     text-decoration: none;
     font-size: 24px;
 }
+
 .nav {
     height: 500px;
     width: 300px;
@@ -106,7 +107,6 @@ img {
     width: 500px;
     height: 700px;
     font-size: 24px;
-
 }
 
 input {
@@ -133,7 +133,6 @@ button {
     justify-content: center;
 }
 
-
 #left-page {
     display: block;
     overflow: auto;
@@ -144,6 +143,7 @@ button {
     margin-left: auto;
     margin-right: auto;
 }
+
 .home-button-home {
     width: 100%;
     display: flex;
@@ -159,19 +159,28 @@ button {
     margin-top: 3%;
     margin-bottom: 15px;
 }
+
 .home-button a {
     padding-inline: 100px;
     padding-block: 10px;
 }
+
 a{
     text-decoration: none;
 }
+
 .button-home {
     width: 80%;
     height: 50px;
     margin: 3%;
-    border-radius: 5px;
+    border-radius: 30px;
+    
 }
+
+.button-home:hover{
+    color: red;
+}
+
 
 #middle-page {
     display: flex;
@@ -193,10 +202,8 @@ a{
     width: 20%;
     height: auto;
     margin: 1.5%;
-    border: 2px solid red;
     align-items: center;
     border-radius: 15px;
-    background-color:#e54c3a;
 }
 
 .search-box {
@@ -213,10 +220,12 @@ a{
     align-items: center;
     justify-content: center;
 }
+
 .search-form form {
     display: flex; 
     flex-direction: row;
 }
+
 .search-form input {
     border-radius: 20px;
     width: 200px;
@@ -234,7 +243,6 @@ a{
     text-align: center;
     margin-top: 3%;
 }
-
 /* POST STYLING */
 .home-posts {
     width: 100%;
@@ -296,7 +304,6 @@ a{
     height: auto;
     border-radius: 5px;
 }
-
 .add-c {
     color: black;
     margin-top: 10px;
@@ -331,12 +338,14 @@ a{
     background-color: white;
 
 }
+
 .comment-section {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
+
 .add-comment {
     display: flex;
     flex-direction: column;
@@ -344,19 +353,21 @@ a{
     /* border: 2px solid green; */
     width: 100%;
 }
+
 .comment-wrapper {
     display: none;
     width: 80%;
     height: auto;
     margin: auto;
     /* border: 2px solid blue; */
-
 }
+
 .com-submit {
     width: 80px;
     border-radius: 10px;
     border: none;
 }
+
 #text-comment {
     width: 95%;
     border-radius: 10px;
