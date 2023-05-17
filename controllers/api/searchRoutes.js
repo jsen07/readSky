@@ -41,10 +41,10 @@ router.get('/', async (req, res) => {
       ]
     });
     const trendingPosts = trendingPostData.map((post) => post.get({ plain: true }));
-    
+    const user_id = req.session.user_id;
     req.flash('message', req.session.username);
   // res.render('homepage', { logged_in: req.session.logged_in, message: req.flash('message') });
-    res.render('searchPage', { posts, trendingPosts, logged_in: req.session.logged_in, message: req.flash('message') });
+    res.render('searchPage', { posts, user_id, trendingPosts, logged_in: req.session.logged_in, message: req.flash('message') });
   } catch (error) {
     res.status(500).json(error);
   }

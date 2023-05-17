@@ -56,7 +56,7 @@ router.get('/', async (req, res) => {
         include: [
           {
             model: User,
-            attributes: ['username']
+            attributes: ['id', 'username']
           },
           {
             model: Comment,
@@ -90,8 +90,9 @@ router.get('/', async (req, res) => {
       });
       const trendingPosts = trendingPostData.map((post) => post.get({ plain: true }));
       req.flash('message', req.session.username);
+      const user_id = req.session.user_id;
     // res.render('homepage', { logged_in: req.session.logged_in, message: req.flash('message') });
-      res.render('homepage', { posts, trendingPosts, logged_in: req.session.logged_in, message: req.flash('message') });
+      res.render('homepage', { posts, trendingPosts, user_id, logged_in: req.session.logged_in, message: req.flash('message') });
     } catch (error) {
       res.status(500).json(error);
     }

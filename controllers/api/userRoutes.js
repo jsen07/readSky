@@ -20,7 +20,8 @@ router.get('/:id', async (req, res) => {
             ]
         });
         const userPosts = userData.get({ plain: true });
-        res.render('userPosts', { userPosts });
+        const user_id = req.session.user_id;
+        res.render('userPosts', { userPosts, user_id });
     } catch (error) {
         res.status(500).json(error);
         console.log(error);

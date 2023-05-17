@@ -8,7 +8,7 @@ router.get('/:id', async (req, res) => {
             include: [
                 {
                     model: Post,
-                    attributes: ['text', 'likes', 'private'],
+                    attributes: ['id', 'text', 'likes', 'private'],
                     include: [
                         {
                             model: Comment,
@@ -20,8 +20,8 @@ router.get('/:id', async (req, res) => {
             ]
         });
         const userPosts = userData.get({ plain: true });
-        console.log(userPosts);
-        res.render('profilePage', { userPosts, logged_in: req.session.logged_in });
+        const user_id = req.session.user_id;
+        res.render('profilePage', { userPosts, user_id, logged_in: req.session.logged_in });
 
     } catch (error) {
         res.status(500).json(error);
