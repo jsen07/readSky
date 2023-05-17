@@ -69,7 +69,14 @@ router.get('/', async (req, res) => {
         ]
       });
       const posts = postData.map((post) => post.get({ plain: true }));
-
+      const isLoggedIn = req.session.logged_in ? true : false;
+      const newPost = posts.map((post) => {
+        return { 
+          ...post,
+          logged_in: isLoggedIn
+        }
+      })
+      console.log(newPost);
       const trendingPostData = await Post.findAll({
         order: [['likes', 'DESC']],
         limit: 5,
@@ -92,7 +99,7 @@ router.get('/', async (req, res) => {
       req.flash('message', req.session.username);
       const user_id = req.session.user_id;
     // res.render('homepage', { logged_in: req.session.logged_in, message: req.flash('message') });
-      res.render('homepage', { posts, trendingPosts, user_id, logged_in: req.session.logged_in, message: req.flash('message') });
+      res.render('homepage', { newPost, trendingPosts, user_id, logged_in: req.session.logged_in, message: req.flash('message') });
     } catch (error) {
       res.status(500).json(error);
     }
