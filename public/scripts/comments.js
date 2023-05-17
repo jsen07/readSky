@@ -14,8 +14,6 @@ addID();
 
 function displayComments (e)  {
 
-  const text = e.target.innerText;
-  console.log(text)
     const id = e.target.id;
     const block = document.getElementById('block'+id);
     if (block.style.display === "none") {
