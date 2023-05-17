@@ -10,13 +10,13 @@
         <div class="post-body">
         <div class="text" style="color: black">{{text}}</div>
         </div>
-        <div class="post-likes" style="color: black">Likes: {{likes}}</div>
+        <div class="post-likes" style="color: white">Likes: {{likes}}</div>
         <div class="post-footer">
-                <ul> <p class='comment'>Comments</p>
+                <ul> <p class='comment' >Show comments</p>
                     <div class="comment-block">
                     {{#each comments as |comment|}}
                     <li style="color: purple">{{comment.user.username}}</li>
-                    <li style="color: blue">{{text}} - Likes: {{likes}}</li>
+                    <li class="user-comment" style="color: blue">{{text}} - Likes: {{likes}}</li>
                     {{/each}}
                     </div>
                 </ul>
