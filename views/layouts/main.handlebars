@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/Assets/Images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Dosis&display=swap" rel="stylesheet">
@@ -15,7 +16,6 @@
 <nav class="top-nav">
     <div class="login-wrapper">
     {{#if logged_in}}
-    <a href="/profile"> profile </a>
     <button id="logout" class="logout-btn">Logout</button>
     {{else}}
     <a href="/login" class="login-btn"> Login / </a> 
@@ -28,6 +28,7 @@
     {{#if logged_in}}
   <script src="/scripts/logout.js"></script>
   {{/if}}
-    <script src="scripts/comments.js"></script>
+    <script src="/scripts/comments.js"></script>
+    <script src="/scripts/submit-comment.js"></script>
 </body>
 </html>
