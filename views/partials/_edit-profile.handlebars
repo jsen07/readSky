@@ -1,5 +1,6 @@
 <h1>Edit my details</h1>
-<form id="profile-form">
+<form id="profile-form" data-id="{{user_id}}">
+  <label id="form-label" for="" value="{{user.id}}"></label>
   <input type="hidden" name="_method" value="PUT">
   <label for="first_name">First Name:</label>
   <input type="text" id="profile-first_name" name="first_name" value="{{user.first_name}}">

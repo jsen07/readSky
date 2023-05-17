@@ -1,9 +1,8 @@
 const handleSubmit = async (event) => {
     event.preventDefault();
   
-    // Extract the user ID from the form action URL
-    const urlParts = window.location.pathname.split('/');
-    const userId = urlParts[urlParts.length - 2];
+    const user_id = document.getElementById('form-label').getAttribute('value');
+    console.log(user_id);
   
     // Get form input values
     const firstName = document.getElementById('profile-first_name').value;
@@ -23,7 +22,7 @@ const handleSubmit = async (event) => {
     console.log(data);
   
     try {
-      const response = await fetch(`/api/profile/${userId}/edit`, {
+      const response = await fetch(`/api/profile/${user_id}/edit`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -33,7 +32,7 @@ const handleSubmit = async (event) => {
   
       if (response.ok) {
     
-        window.location.href = `/api/profile/${userId}`;
+        window.location.href = `/api/profile/${user_id}`;
       } else {
 
         const errorData = await response.json();
