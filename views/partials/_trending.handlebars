@@ -5,7 +5,7 @@
     <div class="post">  
         <div class="post-header">
             <div class="profile-img"></div>
-            <div class="username" style="color: red">{{user.username}}</div>
+            <a href="api/profile/{{user.id}}"><div class="username" style="color: red">{{user.username}}</div></a>
         </div>
         <div class="text" style="color: white">{{text}}</div>
         <div class="post-likes"style="color: white">Likes: {{likes}}</div>

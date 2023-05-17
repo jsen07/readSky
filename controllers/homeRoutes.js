@@ -63,7 +63,7 @@ router.get('/', async (req, res) => {
             attributes: ['text', 'likes'],
             include: {
               model: User,
-              attributes: ['username']
+              attributes: ['id', 'username']
             }
           },
         ]
@@ -76,7 +76,7 @@ router.get('/', async (req, res) => {
         include: [
           {
             model: User,
-            attributes: ['username']
+            attributes: ['id', 'username']
           },
           {
             model: Comment,
