@@ -25,9 +25,9 @@
 
     <div id="middle-page">
       
-        {{#each posts as |post|}}
+        {{#each newPost as |post|}}
         {{> _posts}}
-    {{!-- {{#if logged_in}} --}}
+    {{#if logged_in}}
         <div class="comment-section">
          <a id="post{{post.id}}" class="add-c"> Add a comment </a>
          <div class="comment-wrapper">
@@ -40,7 +40,7 @@
     <button class="com-submit" id="comment-sbm">Submit</button>
     </div>
      </div>
-       {{!-- {{/if}} --}}
+       {{/if}}
            {{/each}}
     </div>
 

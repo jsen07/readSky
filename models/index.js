@@ -38,5 +38,5 @@ Comment.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-
+//
 module.exports = { User, Post, Comment } // The code snippet exports the User, Post, and Comment models as an object. This allows other parts of the application to import all three models from a single module.
