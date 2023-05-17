@@ -32,7 +32,6 @@ const addComment = async (event) => {
 
     const oldId = event.target.id;
     const wrapper = event.target.nextElementSibling;
-
     if(wrapper.style.display == 'none') {
       event.target.innerText = 'Close';
       wrapper.style.display = 'block';
@@ -41,7 +40,7 @@ const addComment = async (event) => {
       event.target.innerText = 'Add a comment';
       wrapper.style.display = 'none';
     }
-    // console.log(wrapper)
+
     const id = oldId.replace('post','');
     // $('button[id^="comment-sbm"]').attr('id', 'comment-sbm'+ id);
     //   console.log($(this));
