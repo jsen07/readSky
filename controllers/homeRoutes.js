@@ -22,38 +22,33 @@ router.get("/register", (req, res) => {
     }
     res.render('register');
 })
-router.get("/profile", (req, res) => {
-    if(req.session.logged_in) {
-       res.redirect(`/profile/${req.session.user_id}`);
-       return;
+// router.get("/profile", (req, res) => {
+//     if(req.session.logged_in) {
+//        res.redirect(`/profile/${req.session.user_id}`);
+//        return;
         
-    }
-    res.redirect('/');
-})
-router.get('/posts/:id', (req, res) => {
-  res.render('createComment');
+//     }
+//     res.redirect('/');
+// })
 
-  req.session.post_id = req.params.id;
+// router.get("/profile/edit", (req, res) => {
+//     if(req.session.logged_in) { 
+//         res.redirect(`/profile/edit/${req.session.user_id}`);  
+//     return
+//     }
+//     res.redirect('/');
+// })
 
-})
-router.get("/profile/edit", (req, res) => {
-    if(req.session.logged_in) { 
-        res.redirect(`/profile/edit/${req.session.user_id}`);  
-    return
-    }
-    res.redirect('/');
-})
+// router.get("/profile/edit/:id", (req, res) => {
+//     if(req.session.logged_in) { 
+//         if(req.session.user_id == req.params.id) {
+//     res.render('edit-profile', { logged_in: req.session.logged_in});
+//     return
+//         }
+//     }
+//     res.redirect('/');
 
-router.get("/profile/edit/:id", (req, res) => {
-    if(req.session.logged_in) { 
-        if(req.session.user_id == req.params.id) {
-    res.render('edit-profile', { logged_in: req.session.logged_in});
-    return
-        }
-    }
-    res.redirect('/');
-
-});
+// });
 
 router.get('/', async (req, res) => {
     try {

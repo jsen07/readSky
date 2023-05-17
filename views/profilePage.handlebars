@@ -1,0 +1,48 @@
+
+<h1 id="title">profile page</h1> 
+{{#if logged_in}}
+{{#if message}}
+{{message}}</h1>
+  {{/if}}
+    {{/if}}
+<div id="container">
+
+    <div id="left-page">
+
+        <div class="home-button-home">
+            <button class="button"type="home-button">Home</button>
+        </div>
+        <div class="home-button">
+            <button class="button"type="profile-button">Explore</button>
+        </div>
+        <div class="home-button">
+            <button id="popup-button" class="button"type="post-button">Post</button>
+        </div>
+        <div class="home-button">
+            <button class="button"type="profile-button">Profile</button>
+        </div>
+    </div>
+
+    <div id="middle-page">
+        <section>
+            <div class="profile-header">
+                <div class="name">{{userPosts.first_name}} {{userPosts.last_name}}</div>
+                <div class="username"> Username : {{userPosts.username}}</div>
+                <div class=""> E-mail :{{userPosts.email}}</div>
+                <a href="/api/profile/{{userPosts.id}}/edit"> Edit profile </a>
+            </div>
+            <div class="profile-posts">
+                {{#each userPosts.posts as |post|}}
+                {{> _profile}}
+                {{/each}}
+            </div>
+        </section>
+    </div>
+
+    <div id="right-page">
+    
+    
+    </div>
+</div>
+
+

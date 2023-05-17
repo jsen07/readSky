@@ -16,6 +16,7 @@
 <nav class="top-nav">
     <div class="login-wrapper">
     {{#if logged_in}}
+    <a href="/api/profile"> profile </a>
     <button id="logout" class="logout-btn">Logout</button>
     {{else}}
     <a href="/login" class="login-btn"> Login / </a> 
@@ -27,7 +28,10 @@
     {{{body}}}
     {{#if logged_in}}
   <script src="/scripts/logout.js"></script>
+  
   {{/if}}
+  <script src="/scripts/create-post.js"></script>
+  <script src="/scripts/edit-profile.js"></script>
     <script src="/scripts/comments.js"></script>
     <script src="/scripts/submit-comment.js"></script>
 </body>
