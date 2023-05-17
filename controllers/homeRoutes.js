@@ -69,7 +69,7 @@ router.get('/', async (req, res) => {
         ]
       });
       const posts = postData.map((post) => post.get({ plain: true }));
-  
+
       const trendingPostData = await Post.findAll({
         order: [['likes', 'DESC']],
         limit: 5,
@@ -89,7 +89,6 @@ router.get('/', async (req, res) => {
         ]
       });
       const trendingPosts = trendingPostData.map((post) => post.get({ plain: true }));
-      
       req.flash('message', req.session.username);
     // res.render('homepage', { logged_in: req.session.logged_in, message: req.flash('message') });
       res.render('homepage', { posts, trendingPosts, logged_in: req.session.logged_in, message: req.flash('message') });

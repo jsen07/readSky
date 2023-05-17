@@ -10,20 +10,19 @@ function addID() {
         document.getElementById(i).addEventListener('click', displayComments);
     }
 }
+addID();
 
 function displayComments (e)  {
 
+  const text = e.target.innerText;
+  console.log(text)
     const id = e.target.id;
     const block = document.getElementById('block'+id);
     if (block.style.display === "none") {
+      e.target.innerText = "Hide comments"
         block.style.display = "block";
       } else {
+        e.target.innerText = "Show comments"
         block.style.display = "none";
       }
-    // if(block.style.display==="block") {
-    //     block.style.display = 'none';
-    // }
-console.log(id);
 }
-
-addID();
