@@ -15,16 +15,16 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    background-color: #e54c3a;
 }
 
 .logo-box {
     width: 50%;
-    height: 100%;
+    height: 60px;
     justify-content: start;
 }
 
 .logo-wrapper {
+    height: 60px;
     display: flex;
     flex-direction: row;
     margin-left: 5%;
@@ -32,7 +32,8 @@
 
 img {
     width: 150px;
-    height: 100%;
+    height: 50px;
+    margin-top: 0.6%;
 }
 
 .login-box {
