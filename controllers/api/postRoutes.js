@@ -3,7 +3,7 @@ const { User, Post, Comment } = require('../../models');
 
 router.get('/create', (req, res) => {
     try {
-        res.render('_createPost');
+        res.render('createPost');
     } catch (error) {
         console.log(error)
     }

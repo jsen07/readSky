@@ -312,3 +312,26 @@ button {
 .post-footer li {
     padding: 5px;
 }
+
+
+/* popup */
+
+/* Styles for the popup container */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styles for the form elements */
+.popup {
+    top: 30%;
+    left: 50%;
+    height: auto;
+    width: auto;
+}
+  

@@ -1,5 +1,5 @@
 
-<h1 id="title">home page</h1> 
+<h1 id="title">profile page</h1> 
 {{#if logged_in}}
 {{#if message}}
 {{message}}</h1>
@@ -24,30 +24,16 @@
     </div>
 
     <div id="middle-page">
-        {{ createPost}}
-        {{#each posts as |post|}}
-        {{> _posts}}
-        {{/each}}
-       
+        <section>
+ 
+                {{> _edit-profile}}
+ 
+        </section>
     </div>
 
     <div id="right-page">
-    {{!-- <input class="search-box" type="text" placeholder="search tweets" name="email" id="email" required> --}}
-    {{!-- <button class="search-button" type="search-button">Search</button> --}}
-    <section class="search-form">
-    <form action="/api/search" method="post">
-      <input type="text" name="search" placeholder="Search...">
-      <button id="search-button" type="submit">Search</button>
-    </form>
     
-
     
-    </section>
-    <section class="home-posts">
-        {{#each trendingPosts as |post|}}
-        {{> _trending}}
-        {{/each}}
-    </section>
     </div>
 </div>
 
