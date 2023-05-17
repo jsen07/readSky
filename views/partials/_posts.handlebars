@@ -5,7 +5,9 @@
     <div class="post">  
         <div class="post-header">
             <div class="profile-img"></div>
+            <a href="api/profile/{{user.id}}">
             <div class="username" style="color: red">{{user.username}}</div>
+            </a>
         </div>
         <div class="post-body">
         <div class="text" style="color: black">{{text}}</div>
@@ -15,7 +17,7 @@
                 <ul> <p class='comment' >Show comments</p>
                     <div class="comment-block">
                     {{#each comments as |comment|}}
-                    <li style="color: purple">{{comment.user.username}}</li>
+                    <li style="color: purple"><a href="api/profile/{{comment.user.id}}">{{comment.user.username}}</a></li>
                     <li class="user-comment" style="color: blue">{{text}} - Likes: {{likes}}</li>
                     {{/each}}
                     </div>
