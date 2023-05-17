@@ -50,11 +50,11 @@ router.put('/:id/edit', async (req, res) => {
         const userData = await User.update(req.body, {
             where: {
                 id: req.params.id,
-                first_name: req.body.first_name,
-                last_name: req.body.last_name,
-                username: req.body.username,
-                email: req.body.email,
-                password: req.body.password
+                // first_name: req.body.first_name,
+                // last_name: req.body.last_name,
+                // username: req.body.username,
+                // email: req.body.email,
+                // password: req.body.password
             }
         });
       
