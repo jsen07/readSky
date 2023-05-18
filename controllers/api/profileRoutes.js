@@ -33,7 +33,8 @@ router.get('/:id/edit', async (req, res) => {
     try {
       
         if(req.session.user_id != req.params.id) {
-            res.redirect(`/api/profile/${req.session.user_id}`);
+            req.flash('editfail', 'You cannot edit this user profile');
+            res.redirect(`/api/profile/${req.params.id}`);
         }
         const { id } = req.params;
         const user = await User.findByPk(id);
