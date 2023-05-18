@@ -1,7 +1,9 @@
 
 
 <div id="container">
-
+{{#if editfail}}
+<h1>Tag Already ِExists</h1>
+{{/if}}
     <div id="left-page">
 
         <div class="home-button">
@@ -11,9 +13,7 @@
             <button class="button-home"><a href="/api/search">Explore</a></button>
         </div>
         {{#if logged_in}}
-        <div class="home-button">
-            <button id="popup-button" class="button-home">Post</button>
-        </div>
+ 
         <div class="home-button">
            <button class="button-home"><a href="/api/profile/{{user_id}}">Profile</a></button>
         </div>

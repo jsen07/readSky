@@ -1,11 +1,18 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
-router.get('/create', (req, res) => {
+router.post('/create', async (req, res) => {
     try {
-        res.render('createPost');
+        const newComment = await Post.create({
+            text: req.body.text,
+            likes: 0,
+            private: false,
+            user_id: req.session.user_id,
+            
+        });
+        res.status(200).json(newComment)
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 });
 

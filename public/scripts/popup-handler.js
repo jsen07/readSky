@@ -1,16 +1,8 @@
-const popupButton = document.getElementById('popup-button');
-popupButton.addEventListener('click', async () => {
-    console.log('click');
-  try {
-    const response = await fetch('/api/post/create');
-    if (response.ok) {
-      const popupContent = await response.text();
-      const popupContainer = document.createElement('div');
-      popupContainer.innerHTML = popupContent;
-      popupContainer.classList.add('popup', 'active');
-      document.body.appendChild(popupContainer);
-    }
-  } catch (error) {
-    console.error(error);
-  }
+document.getElementById('popup-button').addEventListener('click', async (e) => {
+
+      const bb = document.getElementById('popup');
+      bb.style.display="block";
+    
+
+
 });

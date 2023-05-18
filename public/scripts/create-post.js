@@ -15,24 +15,29 @@
 //   }
 // });
 
-const popupButton = document.getElementById('popup-button');
-// const closeBtn = document.getElementById('close-btn')
+const popupButton = document.getElementById('submit-post');
+const closeButton = document.getElementById('close-btn');
 
-let popupContainer;
-
-popupButton.addEventListener('click', async () => {
-  try {
-    const response = await fetch('/api/post/create');
+popupButton.addEventListener('click', async (event) => {
+  event.preventDefault();
+  const text = document.getElementById('text').value;
+    const response = await fetch('/api/post/create', {
+      method: 'POST',
+            body: JSON.stringify({ text }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+    
     if (response.ok) {
-      const popupContent = await response.text();
-      popupContainer = document.createElement('div');
-      popupContainer.innerHTML = popupContent;
-      document.body.appendChild(popupContainer);
+      document.location.replace('/');
     }
-  } catch (error) {
-    console.error(error);
-  }
+
 });
 
+closeButton.addEventListener('click', async (event) => {
 
+  const closeThis = document.getElementById('popup');
+
+  closeThis.style.display = 'none';
+
+});
 

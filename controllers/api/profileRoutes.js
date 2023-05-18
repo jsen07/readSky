@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
         });
         const userPosts = userData.get({ plain: true });
         const user_id = req.session.user_id;
-        res.render('profilePage', { userPosts, user_id, logged_in: req.session.logged_in });
+        res.render('profilePage', { userPosts, user_id, logged_in: req.session.logged_in, editfail: req.flash('editfail') });
 
     } catch (error) {
         res.status(500).json(error);
@@ -31,13 +31,16 @@ router.get('/:id', async (req, res) => {
 
 router.get('/:id/edit', async (req, res) => {
     try {
+        if(req.session.user_id != req.params.id) {
+            res.redirect(`/api/profile/${req.session.user_id}`);
+        }
         const { id } = req.params;
         const user = await User.findByPk(id);
         if (!user) {
           return res.status(404).json({ error: 'User not found' });
         }
 
-        res.render('editProfilePage', { user });
+        res.render('editProfilePage', { user, logged_in: req.session.logged_in, user_id: req.session.user_id });
       } catch (error) {
         console.error(error);
         return res.status(500).json({ error: 'Server error' });
