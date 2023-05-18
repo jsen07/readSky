@@ -24,6 +24,18 @@
     </div>
 
     <div id="middle-page">
+        <div id="popup" class="popup">
+    <button id="close-btn">X</button>
+    <form action="/api/post/" method="POST">
+    <div class="create-post">
+        <h2>Post Text:</h2>
+        <textarea id="text" name="text" rows="4" cols="50"></textarea>
+   </div>
+   <div class="submit-wrapper">
+        <button id="submit-post">Submit</button>
+        </div>
+    </form>
+</div>
         {{#if showCreatePost}}
 
             {{> _createPost}}
@@ -59,5 +71,6 @@
     </section>
     </div>
 </div>
-
+      <script src="/scripts/create-post.js"></script>
+        <script src="/scripts/popup-handler.js"></script>
 
