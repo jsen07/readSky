@@ -21,11 +21,11 @@
     </div>
 
     <div id="middle-page">
-        <section>
+        
             <div class="profile-header">
                 <div class="name">{{userPosts.first_name}} {{userPosts.last_name}}</div>
-                <div class="username"> Username : {{userPosts.username}}</div>
-                <div class=""> E-mail :{{userPosts.email}}</div>
+                <div class="profile-username">{{userPosts.username}}</div>
+                <div class="profile-email"> E-mail :{{userPosts.email}}</div>
                 <a href="/api/profile/{{userPosts.id}}/edit"> Edit profile </a>
             </div>
             <div class="profile-posts">
@@ -33,7 +33,7 @@
                 {{> _profile}}
                 {{/each}}
             </div>
-        </section>
+
     </div>
 
     <div id="right-page">
