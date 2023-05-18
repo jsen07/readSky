@@ -31,6 +31,7 @@ router.get('/:id', async (req, res) => {
 
 router.get('/:id/edit', async (req, res) => {
     try {
+      
         if(req.session.user_id != req.params.id) {
             res.redirect(`/api/profile/${req.session.user_id}`);
         }

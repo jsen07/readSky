@@ -194,6 +194,7 @@ a{
     background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
     align-items: center;
     border-radius: 15px;
+    padding-bottom: 20px;
     
  
 }
@@ -255,10 +256,13 @@ a{
 /* POST STYLING */
 .home-posts {
     width: 100%;
-    height: 1050px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.home-posts h2 {
+    overflow: hidden;
 }
 .post {
     height: auto;
