@@ -1,29 +1,33 @@
 
-<h1 id="title">
-{{#if message}}
-{{message}}</h1>
-  {{/if}}
+<div class="homepage-banner">
+<h1 id="title"> Posts for you {{message}}!</h1>
+</div>
+
 <div id="container">
 
     <div id="left-page">
 
-        <div class="home-button">
-            <button class="button-home"><a href="/">Home</a></button>
-        </div>
-        <div class="home-button">
-            <button class="button-home"><a href="/api/search">Explore</a></button>
-        </div>
+        <a href="/"><div class="home-button">
+            <button class="button-home">Home</button>
+        </div></a>
+        <a href="/api/search"><div class="home-button">
+            <button class="button-home">Explore</button>
+        </div></a>
         {{#if logged_in}}
         <div class="home-button">
-            <button class="button-home">Post</button>
+            <button id="popup-button" class="button-home">Post</button>
         </div>
-        <div class="home-button">
-           <button class="button-home"><a href="/api/profile/{{user_id}}">Profile</a></button>
-        </div>
+        <a href="/api/profile/{{user_id}}"><div class="home-button">
+           <button class="button-home">Profile</button>
+        </div></a>
           {{/if}}
     </div>
 
     <div id="middle-page">
+        {{#if showCreatePost}}
+
+            {{> _createPost}}
+        {{/if}}
       
         {{#each newPost as |post|}}
         {{> _posts}}
@@ -47,8 +51,8 @@
     <div id="right-page">
     {{!-- <input class="search-box" type="text" placeholder="search tweets" name="email" id="email" required> --}}
     {{!-- <button class="search-button" type="search-button">Search</button> --}}
-    <h2>Trending Posts</h2>
     <section class="home-posts">
+        <h2>Trending Posts</h2>
         {{#each trendingPosts as |post|}}
         {{> _trending}}
         {{/each}}

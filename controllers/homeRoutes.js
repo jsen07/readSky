@@ -12,7 +12,7 @@ router.get("/login", (req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('login');
+    res.render('login', { registersuccess: req.flash('registerSuccess') });
 })
 
 router.get("/register", (req, res) => {
@@ -76,7 +76,6 @@ router.get('/', async (req, res) => {
           logged_in: isLoggedIn
         }
       })
-      console.log(newPost);
       const trendingPostData = await Post.findAll({
         order: [['likes', 'DESC']],
         limit: 5,

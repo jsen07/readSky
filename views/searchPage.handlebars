@@ -1,32 +1,26 @@
 
-<h1 id="title">search page</h1> 
-{{#if logged_in}}
-{{#if message}}
-{{message}}</h1>
-  {{/if}}
-    {{/if}}
-<div id="container">
+<div class="search-container">
 
     <div id="left-page">
 
-        <div class="home-button">
-            <button class="button-home"><a href="/">Home</a></button>
-        </div>
-        <div class="home-button">
-            <button class="button-home"><a href="/api/search">Explore</a></button>
-        </div>
+        <a href="/"><div class="home-button">
+            <button class="button-home">Home</button>
+        </div></a>
+        <a href="/api/search"><div class="home-button">
+            <button class="button-home">Explore</button>
+        </div></a>
         {{#if logged_in}}
         <div class="home-button">
             <button id="popup-button" class="button-home">Post</button>
         </div>
-        <div class="home-button">
-           <button class="button-home"><a href="/api/profile/{{user_id}}">Profile</a></button>
-        </div>
+        <a href="/api/profile/{{user_id}}"><div class="home-button">
+           <button class="button-home">Profile</button>
+        </div></a>
           {{/if}}
-    </div>
+          </div>
 
     <div id="middle-page">
-        <section>
+        <section class="search-section">
             <form action="/api/search" method="post">
                 <input type="text" name="search" placeholder="Search all posts...">
                 <button id="search-button" type="submit">Search</button>
@@ -46,20 +40,23 @@
         </section>
     </div>
 
-    <div id="right-page">
-    <section>
+    <div class="right-search">
+
     <form action="/api/search" method="post">
+    <section class="search-user">
       <input type="text" name="search" placeholder="Search...">
       <button id="search-button" type="submit">Search</button>
+      </section>
     </form>
-    
-    </section>
+
     <section>
         {{#each userSearches as |result|}}
             {{> _userSearches}}
         {{/each}}
     </section>
     </div>
+
+
 </div>
 
 
