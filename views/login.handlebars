@@ -1,9 +1,13 @@
 
- <div class="main-wrapper">
-     <form class="register-form">
+<div class="reg-success">
+  <h1>{{registersuccess}}</h1>
+
+</div>
+ <div class="loginform-wrapper">
         <div class="form-container">
           <h1>Login</h1>
 
+          <div class="login-details-container">
           <b>Email</b>
           <input type="text" placeholder="Enter Email" name="mail" id="email">
           
@@ -11,11 +15,11 @@
           <input type="password" placeholder="Enter Password" name="psw" id="psw">
       
           <span id ='login-error' class="error"></span>
-      
           <button type ="submit" id="loginbtn">Log in</button>
-        </div>
+          </div>
+  
+    
         
       </form>
-
-    </div>
+</div>
     <script src="/scripts/login.js"></script>

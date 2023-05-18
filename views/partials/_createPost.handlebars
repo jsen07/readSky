@@ -1,19 +1,17 @@
-<div id="popup" class="popup">
-    <button id="close-btn">x</button>
+<div class="popup">
     <form action="/api/post/" method="POST">
         <label for="text">Post Text:</label>
         <textarea id="text" name="text" rows="4" cols="50"></textarea>
         <br>
 
-        <input type="hidden" id="private-hidden" name="private" value="0">
+        <input type="hidden" id="private" name="private" value="0">
         <label for="private">Private:</label>
-        <input type="checkbox" id="private-checkbox" name="private" value="1">
+        <input type="checkbox" id="private" name="private" value="1">
         <br>
 
         <button type="submit">Submit</button>
     </form>
 </div>
-<script src="/scripts/popup-handler.js"></script>
 
 {{!-- <script>
     //document.addEventListener("DOMContentLoaded", function() {

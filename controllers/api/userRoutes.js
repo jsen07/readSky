@@ -37,8 +37,9 @@ router.post('/', async (req, res) => {
             email: req.body.email,
             password: req.body.password,
         });
-        res.redirect('/login');
-
+        
+        req.flash('registerSuccess', 'You have successfully registered');
+        res.redirect('/register');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

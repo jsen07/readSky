@@ -1,12 +1,16 @@
-// // document.addEventListener("DOMContentLoaded", function() {
-//     // Your code here
-  
-//           const closeBtn = document.getElementById('close-btn');
-//           const popupDiv = document.getElementById('popup');
-//           closeBtn.addEventListener('click', function(e) {
-//               console.log(e);
-//               if (popupDiv) {
-//                   popupDiv.remove();
-//               }
-//           });
-//     //   });
+const popupButton = document.getElementById('popup-button');
+popupButton.addEventListener('click', async () => {
+    console.log('click');
+  try {
+    const response = await fetch('/api/post/create');
+    if (response.ok) {
+      const popupContent = await response.text();
+      const popupContainer = document.createElement('div');
+      popupContainer.innerHTML = popupContent;
+      popupContainer.classList.add('popup', 'active');
+      document.body.appendChild(popupContainer);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});

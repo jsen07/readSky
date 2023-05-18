@@ -10,13 +10,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Dosis&display=swap" rel="stylesheet">
-    
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Dosis&family=PT+Sans+Narrow&display=swap" rel="stylesheet"> 
+   
 <title>readSky</title>
 </head>
 <nav class="top-nav">
     <div class="logo-box">
         <div class="logo-wrapper">
-            <img class="logo" src="/Assets/Images/logo.png" alt="logo">
+            <a href="/"><img class="logo" src="/Assets/Images/logo.png" alt="logo"></a>
         </div>
     </div>
     <div class="login-box">
@@ -24,8 +27,8 @@
         {{#if logged_in}}
         <button id="logout" class="logout-btn">Logout</button>
         {{else}}
-        <a href="/login" class="login-btn"> Login / </a> 
-        <a href="/register" class="login-btn"> Register </a>
+        <a id="nav-login" href="/login" class="login-btn"> Login </a> 
+        <a id="nav-register"href="/register" class="login-btn"> Register </a>
         {{/if}}
     </div>
 </div>
@@ -34,6 +37,7 @@
     {{{body}}}
     {{#if logged_in}}
   <script src="/scripts/logout.js"></script>
+     <script src="/scripts/create-post.js"></script>
   {{/if}}
     <script src="/scripts/comments.js"></script>
     <script src="/scripts/submit-comment.js"></script>
