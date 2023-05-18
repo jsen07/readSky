@@ -1,63 +1,14 @@
-<style>
-h1 {
-  font-family: Arial, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  color: #333333;
-  margin-bottom: 20px;
-}
+{{#if registersuccess}}
+<div class="flash-banner">
+  <h1>{{registersuccess}}</h1>
 
-.main-wrapper {
-  width: 400px;
-  margin: 0 auto;
-  margin-top: 20px;
-  border: 10px solid #ccc;
-  background-color: #abcfb9;
-  padding: 20px;
-}
-
-.form-container {
-  width: 100%;
-  margin: 0 auto;
-}
-
-h1 {
-  font-size: 40px;
-  margin-bottom: 15px;
-}
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-#loginbtn {
-  background-color: #deeade90;
-  color: white;
-  padding: 15px 20px;
-  margin: 5px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-#loginbtn:hover {
-  opacity: 0.8;
-}
-
-</style>
-<h1></h1>
-
- <div class="main-wrapper">
-     <form class="register-form">
+</div>
+{{/if}}
+ <div class="loginform-wrapper">
         <div class="form-container">
           <h1>Login</h1>
 
+          <div class="login-details-container">
           <b>Email</b>
           <input type="text" placeholder="Enter Email" name="mail" id="email">
           
@@ -65,11 +16,11 @@ input[type=text], input[type=password] {
           <input type="password" placeholder="Enter Password" name="psw" id="psw">
       
           <span id ='login-error' class="error"></span>
-      
           <button type ="submit" id="loginbtn">Log in</button>
-        </div>
+          </div>
+  
+    
         
       </form>
-
-    </div>
-    <script src="/scripts/login.js"></script
+</div>
+    <script src="/scripts/login.js"></script>

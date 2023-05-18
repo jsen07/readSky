@@ -1,0 +1,30 @@
+<!-- posts.handlebars -->
+
+{{!-- <section>
+    {{#each posts as |post|}} --}}
+    <div class="post">  
+        <div class="post-header">
+            <div class="profile-img"></div>
+            <a id="user-profile-link" value="{{user_id}}"href="api/profile/{{user.id}}">
+            <div class="username edit" style="color: black">{{user.username}}</div>
+            </a>
+        </div>
+        <div class="post-body">
+        <div class="text" style="color: black">{{text}}</div>
+        </div>
+        <div class="post-likes" style="color: white">Likes: {{likes}}</div>
+        <div class="post-footer">
+                <ul> <p class='comment' >Show comments</p>
+                    <div class="comment-block">
+                    {{#each comments as |comment|}}
+                    <li style="color: purple"><a href="api/profile/{{comment.user.id}}">{{comment.user.username}}</a></li>
+                    <li class="user-comment" style="color: blue">{{text}} - Likes: {{likes}}</li>
+                    {{/each}}
+                    </div>
+                </ul>
+            <div class="likes"></div>
+        </div>
+    </div>
+    {{!-- <script src="scripts/comments.js"></script> --}}
+    {{!-- {{/each}}
+</section> --}}

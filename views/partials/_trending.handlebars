@@ -1,0 +1,26 @@
+<!-- posts.handlebars -->
+
+{{!-- <section>
+    {{#each trendingPosts as |post|}} --}}
+    <div class="post">  
+        <div class="post-header">
+            <div class="profile-img"></div>
+            <a href="api/profile/{{user.id}}"><div class="username" style="color: black">{{user.username}}</div></a>
+        </div>
+        <div class="trending-post" style="color: black">{{text}}</div>
+        <div class="post-likes"style="color: white">Likes: {{likes}}</div>
+        <div class="post-footer">
+            <div class="comments">
+                <ul>
+                    {{#each comments as |comment|}}
+                    <li style="color: purple">{{comment.user.username}}</li>
+                    <li class="user-comment" style="color: blue">{{text}}</li>
+                    <p style="color: white" >Likes: {{likes}} </p>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="likes"></div>
+        </div>
+    </div>
+    {{!-- {{/each}}
+</section> --}}

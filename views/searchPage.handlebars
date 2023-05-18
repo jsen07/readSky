@@ -1,0 +1,60 @@
+
+<div class="search-container">
+
+    <div id="left-page">
+
+        <a href="/"><div class="home-button">
+            <button class="button-home">Home</button>
+        </div></a>
+        <a href="/api/search"><div class="home-button">
+            <button class="button-home">Explore</button>
+        </div></a>
+        {{#if logged_in}}
+        <a href="/api/profile/{{user_id}}"><div class="home-button">
+           <button class="button-home">Profile</button>
+        </div></a>
+          {{/if}}
+          </div>
+
+    <div id="middle-page">
+        <section class="search-section">
+            <form action="/api/search" method="post">
+                <input type="text" name="search" placeholder="Search all posts...">
+                <button id="search-button" type="submit">Search</button>
+            </form>
+            {{#if postSearches.length}}
+            <ul>
+                {{#each postSearches as |result|}}
+                    {{> _postSearches}}
+                {{/each}}
+            </ul>
+            {{else}}
+            {{#each posts as |post|}}
+                {{> _posts}}
+            {{/each}}
+            {{/if}}
+        
+        </section>
+    </div>
+
+    <div class="right-search">
+
+    <form action="/api/search" method="post">
+    <section class="search-user">
+      <input type="text" name="search" placeholder="Search...">
+      <button id="search-button" type="submit">Search</button>
+      </section>
+    </form>
+
+    <section>
+        {{#each userSearches as |result|}}
+            {{> _userSearches}}
+        {{/each}}
+    </section>
+    </div>
+
+
+</div>
+    <script src="/scripts/edit-url.js"></script>
+
+

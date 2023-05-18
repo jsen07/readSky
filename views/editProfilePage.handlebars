@@ -1,0 +1,34 @@
+
+<div id="container">
+
+    <div id="left-page">
+
+        <div class="home-button">
+            <button class="button-home"><a href="/">Home</a></button>
+        </div>
+        <div class="home-button">
+            <button class="button-home"><a href="/api/search">Explore</a></button>
+        </div>
+        {{#if logged_in}}
+  
+        <div class="home-button">
+           <button class="button-home"><a href="/api/profile/{{user_id}}">Profile</a></button>
+        </div>
+          {{/if}}
+    </div>
+
+    <div id="middle-page">
+        <section>
+ 
+                {{> _edit-profile}}
+ 
+        </section>
+    </div>
+
+    <div id="right-page">
+    
+    
+    </div>
+</div>
+
+

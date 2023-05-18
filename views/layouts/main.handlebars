@@ -7,26 +7,39 @@
     <link rel="icon" href="/Assets/Images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Dosis&display=swap" rel="stylesheet">
-    
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Dosis&family=PT+Sans+Narrow&display=swap" rel="stylesheet"> 
+   
 <title>readSky</title>
 </head>
 <nav class="top-nav">
-    <div class="login-wrapper">
-    {{#if logged_in}}
-    <a href="/profile"> profile </a>
-    <button id="logout" class="logout-btn">Logout</button>
-    {{else}}
-    <a href="/login" class="login-btn"> Login / </a> 
-    <a href="/register" class="login-btn"> Register </a>
-     {{/if}}
+    <div class="logo-box">
+        <div class="logo-wrapper">
+            <a href="/"><img class="logo" src="/Assets/Images/logo.png" alt="logo"></a>
+        </div>
+    </div>
+    <div class="login-box">
+        <div class="login-wrapper">
+        {{#if logged_in}}
+        <button id="logout" class="logout-btn">Logout</button>
+        {{else}}
+        <a id="nav-login" href="/login" class="login-btn"> Login </a> 
+        <a id="nav-register"href="/register" class="login-btn"> Register </a>
+        {{/if}}
+    </div>
 </div>
 </nav>
 <body>
     {{{body}}}
     {{#if logged_in}}
   <script src="/scripts/logout.js"></script>
+  <script src="/scripts/edit-profile.js"></script>
   {{/if}}
+    <script src="/scripts/comments.js"></script>
+    <script src="/scripts/submit-comment.js"></script>
 </body>
 </html>

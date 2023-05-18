@@ -1,64 +1,18 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
-router.get('/', async (req, res) => {
+router.post('/create', async (req, res) => {
     try {
-        const postData = await Post.findAll({
-            include: [
-                {
-                    model: User,
-                    attributes: ['username']
-                },
-                {   
-                    model: Comment,
-                    attributes: ['text', 'likes'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
-                },
-                
-            ]
+        const newComment = await Post.create({
+            text: req.body.text,
+            likes: 0,
+            private: false,
+            user_id: req.session.user_id,
+            
         });
-        const posts = postData.map((post) => post.get({ plain: true }));
-        res.render('posts', { posts });  // Pass 'posts' to the view
-    } catch (error) {
-        res.status(500).json(error);
-    }
-});
-
-router.get('/trending', async (req, res) => {
-    try {
-        const postData = await Post.findAll({
-            order: [['likes', 'DESC']],
-            limit: 5,
-            include: [
-                {
-                    model: User,
-                    attributes: ['username']
-                },
-                {
-                    model: Comment,
-                    attributes: ['text', 'likes'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
-                }
-            ]
-        });
-        const trendingPosts = postData.map((post) => post.get({ plain: true }));
-        res.render('trending', { trendingPosts });
+        res.status(200).json(newComment)
     } catch (error) {
         console.log(error);
-    }
-});
-
-router.get('/create', (req, res) => {
-    try {
-        res.render('createPost');
-    } catch (error) {
-        console.log(error)
     }
 });
 
