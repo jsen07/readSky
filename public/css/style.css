@@ -830,5 +830,9 @@ mobile responsive */
     #profile-form {
         width: 100%;
     }
+
+    .loginform-wrapper {
+        width: 90%;
+    }
    
 }
