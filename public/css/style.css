@@ -613,7 +613,6 @@ input[type=text], input[type=password] {
 .search-container {
     width: 100%;
     height: 100%;
-    border: 2px solid black;
     display: flex;
     flex-direction: row;
 }
@@ -735,4 +734,101 @@ border-radius: 15px;
 
 .user-searches li {
     list-style: none;
+}
+/* 
+mobile responsive */
+@media only screen and (max-width: 390px ) {
+
+    #container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #middle-page, #right-page, #left-page {
+        width: 100%;
+        margin-inline: 2px;
+    }
+
+    #popup {
+        width: 100%;
+        height: 40%;
+    }
+    #close-btn {
+        margin: 5px;
+    }
+    .loginform-wrapper {
+        width: 90%;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .right-search {
+        width: 100%;
+    }
+
+    .search-section form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+    }
+    #search-button {
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 1007px ) {
+
+    #container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #middle-page, #right-page, #left-page {
+        width: 100%;
+        margin-inline: 2px;
+    }
+
+    #left-page {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+    }
+    .home-button {
+        width: 245px;
+        margin: 0;
+    }
+    #left-page button {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        margin-inline: 5px;
+        border: none;
+    }
+
+    .right-search {
+        width: 100%;
+        margin: 0;
+    }
+    .right-search input {
+        width: 80%;
+    }
+
+    .edit-details-wrapper {
+        width: 450px;
+    }
+    #profile-form {
+        width: 100%;
+    }
+   
 }
