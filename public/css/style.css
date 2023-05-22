@@ -777,6 +777,12 @@ mobile responsive */
     #search-button {
         margin-right: 10px;
     }
+    section .edit-details-wrapper {
+       
+        margin-top: 20px;
+        width: 330px;
+    }
+
 }
 
 @media only screen and (max-width: 1007px ) {
