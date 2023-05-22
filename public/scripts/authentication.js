@@ -8,10 +8,6 @@ const registerFormHandler = async (event) => {
     const pwRepeat = document.querySelector('#psw-repeat').value.trim();
     const error = document.querySelector('#error-pw');
 
-    if (first_name || last_name || username || email || password == "") {
-
-        error.textContent='All fields must be filled with matching password.'
-}
     if(password === pwRepeat) { 
         if(first_name && last_name && username && email && password) {
             const response = await fetch('/api/users', {
@@ -27,6 +23,10 @@ const registerFormHandler = async (event) => {
             }
         }
     }
+//     if (first_name || last_name || username || email || password == " ") {
+
+//         error.textContent='All fields must be filled with matching password.';
+// }
 }
 
 
