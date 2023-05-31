@@ -60,3 +60,14 @@ We could implement a subscription-based model, where users pay for access to pre
 ## Built With
 
 - [Node.js](https://nodejs.org/en/) - JavaScript runtime environment.
+
+## Deployment
+
+* readSky is deployed live on heroku [here](https://readsky.herokuapp.com/)
+* the source code for the project can be found on Github [here](https://github.com/jsen07/readSky)
+* The deployed project will look similar to the below screenshot
+![screenshot](public/Assets/Images/screenshot.PNG)
+
+## Credits
+
+This project was built by [Jayssen De Castro](https://github.com/jsen07), [Harun Saini](https://github.com/193G), [Nkem Okoro](https://github.com/dakenny5241) and [Daryl Blough](https://github.com/darylbg)
